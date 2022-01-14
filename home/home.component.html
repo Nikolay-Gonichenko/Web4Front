@@ -1,0 +1,21 @@
+<div class="header">
+  <span>Гониченко Николай Иванович. P3232. Вариант: 32098</span>
+</div>
+
+<div id="formBlock">
+    <div>
+      <label>Login:   </label>
+      <input type="text" [(ngModel)]="username" required name="username" />
+    </div>
+    <div>
+      <label>Password:  </label>
+      <input type="password" [(ngModel)]="password" required name="password" />
+    </div>
+    <div>
+      <button (click)="log()">Access</button>
+    </div>
+    <div>
+      <button (click)="registration()">Registration</button>
+    </div>
+</div>
+

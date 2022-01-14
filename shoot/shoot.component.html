@@ -1,0 +1,52 @@
+
+<div class="container">
+  <div id="formBlock">
+      <div>
+        <label>X: </label>
+        <input type="text" [(ngModel)]="point.x" required name="x" maxlength="5"/>
+      </div>
+      <div>
+        <label>Y: </label>
+        <input type="text" [(ngModel)]="point.y" required name="y" maxlength="5"/>
+      </div>
+      <div>
+        <label>R: </label>
+        <input type="text" [(ngModel)]="point.r" required name="r" maxlength="5"/>
+      </div>
+      <div>
+        <button (click)="sendPoint()">Send</button>
+      </div>
+    <div>
+      <button (click)="setRadius()">Set Radius</button>
+    </div>
+  </div>
+  <div>
+    <canvas #canvas width="310px" height="310px" (click)="shoot($event)"></canvas>
+  </div>
+</div>
+<div>
+  <button (click)="logout()">Logout</button>
+</div>
+<div>
+  <table #results id="results">
+    <tbody>
+    <tr>
+      <td class="tableWithBorder">X</td>
+      <td class="tableWithBorder">Y</td>
+      <td class="tableWithBorder">R</td>
+      <td class="tableWithBorder">Result</td>
+      <td class="tableWithBorder">Time of sending</td>
+      <td class="tableWithBorder">Time of working(ms)</td>
+    </tr>
+    <tr *ngFor="let el from points">
+      <td>{{point.x}}</td>
+      <td>{{point.y}}</td>
+      <td>{{point.r}}</td>
+      <td>{{point.result}}</td>
+      <td>{{point.timeOfSending}}</td>
+      <td>{{point.timeOfExecuting}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
